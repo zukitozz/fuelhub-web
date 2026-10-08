@@ -14,6 +14,9 @@ export default async function DetalleCompraPage({ params }: { params: { id: stri
           <h1>Compra — {compra.numeroGuia}</h1>
           {compra.estado === "ACTIVO" && <AnularCompraButton compraId={compra.id} />}
         </div>
+        <p style={{ margin: "4px 0 16px" }}>
+          <strong>N° de comprobante:</strong> {compra.numeroComprobante || "—"}
+        </p>
         <CompraForm modo="editar" inicial={compra} />
       </main>
     );

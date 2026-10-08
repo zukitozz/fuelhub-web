@@ -30,6 +30,10 @@ export interface CompraBase {
   categoria: Categoria;
   proveedor: string;
   numeroGuia: string;
+  // Número del comprobante (factura/boleta) de la compra. Nombre del campo asumido
+  // (`numeroComprobante`) — confirmar contra openapi.yaml. Opcional/null mientras el backend
+  // no lo devuelva para compras antiguas.
+  numeroComprobante?: string | null;
   cantidad: number;
   costoUnitario: number;
   costoTotal: number; // columna calculada por Postgres, siempre solo lectura
